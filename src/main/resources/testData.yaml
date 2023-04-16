@@ -1,0 +1,9 @@
+# testdata.yaml
+Verify if the customer is able to login properly to Magento:
+  email: jackunderground7@gmail.com
+  password: 7qe6dydN3rebZnv
+  expected_result: success
+
+SearchScenario:
+  search_term: Cucumber
+  expected_result: results_found
