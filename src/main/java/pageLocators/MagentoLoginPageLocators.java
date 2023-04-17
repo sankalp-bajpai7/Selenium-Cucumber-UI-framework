@@ -39,7 +39,7 @@ public class MagentoLoginPageLocators extends ExecutionPreSetup {
     public String dashboardpagetitle = "Home Page - Magento eCommerce - website to practice selenium | demo website for automation testing | selenium practice sites | selenium demo sites | best website to practice selenium automation | automation practice sites Magento Commerce - website to practice selenium | demo website for automation testing | selenium practice sites";
 
     public void findSignOn(WebDriver driver) {
-        SignInLink = driver.findElement(By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[2]/a"));
+        SignInLink = driver.findElement(By.xpath("//div[@class='panel header']//a[contains(text(),'Sign In')]"));
 
 
         wait.until(ExpectedConditions.visibilityOf(SignInLink));

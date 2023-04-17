@@ -42,7 +42,7 @@ public class PHPTravelActions extends ExecutionPreSetup implements HelperBaseInt
      */
 
     public void openPage() {
-        driver = initializeBrowser(driver, "Chrome");
+        driver = initializeBrowser(driver, "FireFox");
         setDriver(driver);
     }
 

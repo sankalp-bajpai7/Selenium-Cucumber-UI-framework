@@ -47,7 +47,7 @@ public class ExecutionPreSetup implements HelperBaseInterface {
 
         //setDriver(Driver);
         scenarioName = scenario.getName();
-        	System.out.println(scenarioName);
+        //	System.out.println(scenarioName);
         Yaml yaml = new Yaml();
         InputStream inputStream = new FileInputStream("src/main/resources/testdata.yaml");
         data = yaml.load(inputStream);

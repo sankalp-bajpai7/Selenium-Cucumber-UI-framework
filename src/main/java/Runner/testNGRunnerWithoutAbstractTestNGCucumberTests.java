@@ -10,7 +10,7 @@ import io.cucumber.testng.FeatureWrapper;
 import io.cucumber.testng.PickleWrapper;
 import io.cucumber.testng.TestNGCucumberRunner;
 
-@CucumberOptions(features = "src/main/java/features", glue = "stepDefinitions", plugin = { "pretty" })
+@CucumberOptions(features = "src/main/java/Features", glue = "stepDefinitions", plugin = { "pretty" })
 public class testNGRunnerWithoutAbstractTestNGCucumberTests {
 
     private TestNGCucumberRunner testNGCucumberRunner;

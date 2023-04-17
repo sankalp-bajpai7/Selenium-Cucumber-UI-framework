@@ -7,3 +7,8 @@ Verify if the customer is able to login properly to Magento:
 SearchScenario:
   search_term: Cucumber
   expected_result: results_found
+
+Validate if customer is able to login to the Swag Labs:
+  username: standard_user
+  password: secret_sauce
+

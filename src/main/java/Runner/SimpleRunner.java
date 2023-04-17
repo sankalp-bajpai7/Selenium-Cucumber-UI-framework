@@ -1,7 +1,7 @@
 package Runner;
 
 import io.cucumber.testng.CucumberOptions;
-@CucumberOptions(tags = "@MagentoLogin")
+@CucumberOptions(tags = "@SwagLabsLogin")
 
 //@MagentoLogin or @PHPPricing - this will run both
 //@MagentoLogin and @PHPPricing - this will run only those that have both the tags on them

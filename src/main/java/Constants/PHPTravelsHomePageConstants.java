@@ -15,6 +15,8 @@ public class PHPTravelsHomePageConstants {
     public static final String PHPTravelsPricingPageURL = "https://phptravels.com/pricing";
     public static final String MagentoHomePageURL="https://magento.softwaretestingboard.com/";
     public static final String PHPTravelsPricingPageTitle="Phptravels Plans & Pricing | One Time Payment";
+
+    public static final String SwagLabsHomePageURL = "https://www.saucedemo.com/";
     public static final List<String> FAQTitles = new ArrayList<String>(
             Arrays.asList(
                     "Is this 100% Open-source code script?",

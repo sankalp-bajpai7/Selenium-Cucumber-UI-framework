@@ -9,3 +9,6 @@ Feature: Magento ECommerce features validation
     Then I should be navigated to Login Page
    	When I enter valid credentials and click on the SignIn button
    	Then I should be displayed with the Dashboard page
+
+
+

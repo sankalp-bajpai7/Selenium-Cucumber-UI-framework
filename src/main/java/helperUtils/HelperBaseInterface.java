@@ -35,7 +35,8 @@ public interface HelperBaseInterface {
             if(browserName.equals("Chrome")){
                 WebDriverManager.chromedriver().setup();
                 Driver = new ChromeDriver();
-                Driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+                Driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+                Driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(100));
             }else if(browserName.equals("Edge")) {
                 WebDriverManager.edgedriver().setup();
                 Driver = new EdgeDriver();
