@@ -12,3 +12,14 @@ Validate if customer is able to login to the Swag Labs:
   username: standard_user
   password: secret_sauce
 
+Find the number of links on the landing page:
+  username: standard_user
+  password: secret_sauce
+
+Filter the list from price low to high:
+  username: standard_user
+  password: secret_sauce
+
+Validate if customer is able to click on a product and read its details:
+  username: standard_user
+  password: secret_sauce

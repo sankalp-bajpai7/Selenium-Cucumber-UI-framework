@@ -2,12 +2,21 @@ package pageActions;
 
 import helperUtils.HelperBaseInterface;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pageLocators.SwagLabsPageLocators;
 
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
+import java.net.URL;
 import java.time.Duration;
+import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import static Constants.PHPTravelsHomePageConstants.MagentoHomePageURL;
 import static Constants.PHPTravelsHomePageConstants.SwagLabsHomePageURL;
@@ -19,6 +28,7 @@ public class SwagLabsLoginActions implements HelperBaseInterface {
     SwagLabsPageLocators swagLabsPageLocators = new SwagLabsPageLocators();
 
     public static WebDriver driver;
+    List<WebElement>  links;
 
     WebDriverWait wait = new WebDriverWait(getCurrentDriver(), Duration.ofSeconds(10));
 
@@ -55,4 +65,46 @@ public class SwagLabsLoginActions implements HelperBaseInterface {
       Assert.assertEquals(swagLabsPageLocators.homepagetitle, homepagetitle);
         System.out.println(homepagetitle);
     }
+
+    public void numberofLinks() {
+        links = driver.findElements(By.tagName("a"));
+        System.out.println("Number of links on the page : " +links.size());
+    }
+
+    public void selectFilter() {
+        swagLabsPageLocators.useFilter(getCurrentDriver());
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    }
+
+    public void numberofBrokenLinks() {
+        int brokenLinksCount = 0;
+        for (WebElement link:links) {
+            String pageURL = link.getAttribute("href");
+            try{
+                HttpURLConnection connection = (HttpURLConnection) new URL(pageURL).openConnection();
+                connection.setRequestMethod("HEAD");
+                connection.connect();
+                int ResponseCode = connection.getResponseCode();
+                if (ResponseCode <200 || ResponseCode >299) {
+                   // System.out.println(pageURL + " is a broken link with response code " + ResponseCode);
+                    brokenLinksCount++;
+                }
+            } catch (Exception e) {
+               // System.out.println(pageURL + " is a broken link with exception " + e.getMessage());
+                brokenLinksCount++;
+            }
+            }
+        System.out.println("Number of broken links : " +brokenLinksCount);
+        }
+
+    public void selectAProduct(){
+        swagLabsPageLocators.setselectProduct(getCurrentDriver());
+    }
+
+    public void validatingProdDescription() {
+        swagLabsPageLocators.validateProductDescription(getCurrentDriver());
+        Assert.assertEquals(swagLabsPageLocators.actualProductDescription,swagLabsPageLocators.description);
+
+    }
+
 }

@@ -4,7 +4,7 @@ public class palindrome {
 
     public static void main (String[] args) {
         String a = "madam";
-        String b = "java";
+        String b = "mom";
         System.out.println(palindromCheck(a));
         System.out.println(palindromCheck(b));
 
