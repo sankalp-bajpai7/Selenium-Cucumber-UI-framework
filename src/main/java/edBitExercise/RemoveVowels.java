@@ -13,16 +13,30 @@ public class RemoveVowels {
                 result.append(c);
             }
         }
-
         return result.toString();
 
     }
 
+    public static int countVowels(String a) {
+        StringBuilder result = new StringBuilder();
+        String vowels = "aeiouAEIOU";
+        int count = 0;
+        for (int i = 0; i<a.length(); i++) {
+            char c = a.charAt(i);
+            if (vowels.indexOf(c) >=0) {
+                count++;
+            }
+        }
+        return count;
+    }
+
     public static void main (String[] args) {
        // String s = "I have never seen a thin person drinking Diet Coke.";
-        String s = "dfghjkl";
+        String s = "dfgaeihjkl";
         String result  = removeVowels(s);
         System.out.println(result);
+        int vowelcount = countVowels(s);
+        System.out.println(vowelcount);
 
 
     }

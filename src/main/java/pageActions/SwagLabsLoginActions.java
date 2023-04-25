@@ -104,6 +104,23 @@ public class SwagLabsLoginActions implements HelperBaseInterface {
     public void validatingProdDescription() {
         swagLabsPageLocators.validateProductDescription(getCurrentDriver());
         Assert.assertEquals(swagLabsPageLocators.actualProductDescription,swagLabsPageLocators.description);
+    }
+
+    public void validatePrice() {
+        swagLabsPageLocators.validateDisplayedPrice(getCurrentDriver());
+        Assert.assertEquals(swagLabsPageLocators.actualPrice, swagLabsPageLocators.price);
+//         boolean b = swagLabsPageLocators.actualPrice.contains(swagLabsPageLocators.price);
+//        if (b==true) {
+//            System.out.println("Price match");
+//        }
+//        else {
+//            System.out.println("Prices dont match");
+//        }
+    }
+    public void addtoCartFromProdDescPage(){
+        swagLabsPageLocators.addtoCartProdDescPage(getCurrentDriver());
+        swagLabsPageLocators.removeButtonAfterAddtoCart(getCurrentDriver());
+        Assert.assertEquals(swagLabsPageLocators.actualButtonText,swagLabsPageLocators.buttonText);
 
     }
 

@@ -23,3 +23,7 @@ Filter the list from price low to high:
 Validate if customer is able to click on a product and read its details:
   username: standard_user
   password: secret_sauce
+
+Validate if customer is able to redirect to product details and add to cart:
+  username: standard_user
+  password: secret_sauce

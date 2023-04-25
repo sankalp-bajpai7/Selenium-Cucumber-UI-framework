@@ -33,10 +33,17 @@ public class SwagLabsPageLocators extends ExecutionPreSetup {
     public WebElement filterDropbox;
     public WebElement selectProduct;
     public WebElement productDescription;
+    public WebElement productPrice;
     public String actualProductDescription = "Rib snap infant onesie for the junior automation engineer in development. " +
             "Reinforced 3-snap bottom closure, " +
             "two-needle hemmed sleeved and bottom won't unravel.";
     public String description;
+    public String actualPrice = "$7.99";
+    public String price;
+    public WebElement addtoCart;
+    public WebElement removeButton;
+    public String buttonText;
+    public String actualButtonText = "Remove";
 
 
     public void setUsernameField(WebDriver driver) {
@@ -61,9 +68,9 @@ public class SwagLabsPageLocators extends ExecutionPreSetup {
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
         selectFilter.selectByValue("lohi");
 
-        AddtoCartForBikeLight = driver.findElement(By.id("add-to-cart-sauce-labs-bike-light"));
-        WebElement addCart = wait.until(ExpectedConditions.elementToBeClickable(AddtoCartForBikeLight));
-        addCart.click();
+//        AddtoCartForBikeLight = driver.findElement(By.id("add-to-cart-sauce-labs-bike-light"));
+//        WebElement addCart = wait.until(ExpectedConditions.elementToBeClickable(AddtoCartForBikeLight));
+//        addCart.click();
     }
 
     public void setselectProduct(WebDriver driver) {
@@ -77,7 +84,27 @@ public class SwagLabsPageLocators extends ExecutionPreSetup {
         wait.until(ExpectedConditions.visibilityOf(productDescription));
         description = productDescription.getText();
         System.out.println(description);
+    }
 
+    public void validateDisplayedPrice(WebDriver driver) {
+        productPrice = driver.findElement(By.xpath("//*[@class=\"inventory_details_price\"]"));
+        wait.until(ExpectedConditions.visibilityOf(productPrice));
+        price = productPrice.getText();
+        System.out.println(price);
+    }
+
+    public void addtoCartProdDescPage(WebDriver driver) {
+        addtoCart = driver.findElement(By.xpath("//*[@class=\"btn btn_primary btn_small btn_inventory\"]"));
+       // addtoCart = driver.findElement(By.id("add-to-cart-sauce-labs-onesie"));
+        wait.until(ExpectedConditions.visibilityOf(addtoCart));
+        addtoCart.click();
+    }
+    public void removeButtonAfterAddtoCart(WebDriver driver) {
+        removeButton = driver.findElement(By.xpath("//*[@class=\"btn btn_secondary btn_small btn_inventory\"]"));
+      //  removeButton = driver.findElement(By.id("remove-sauce-labs-onesie"));
+        wait.until(ExpectedConditions.visibilityOf(removeButton));
+        buttonText = removeButton.getText();
+        System.out.println(buttonText);
     }
 
 }

@@ -65,18 +65,40 @@ public class SwagLabs {
        this.redirectToHomepage();
     }
     @When("I filter the displayed product list from low to high")
-    public void i_filter_the_displayed_product_list_from_low_to_high() {
+    public void setFilter() {
         this.useFilter();
     }
     @Then("I select a product")
-    public void i_select_a_product() {
+    public void selectAProduct() {
         swagLabsLoginActions.selectAProduct();
     }
     @Then("I should be able to view product description")
-    public void i_should_be_able_to_view_product_description() {
+    public void viewProductDescription() {
         //write code for validating product description
         swagLabsLoginActions.validatingProdDescription();
     }
+
+    @Given("I have logged in and have set filter of low to high")
+    public void i_have_logged_in_and_have_set_filter_of_low_to_high() {
+        this.landingPage();
+        this.enterLoginPassword();
+        this.redirectToHomepage();
+        this.useFilter();
+    }
+    @When("I am able to view product description")
+    public void i_am_able_to_view_product_description() {
+        this.viewProductDescription();
+    }
+    @Then("I validate the price")
+    public void i_validate_the_price() {
+        swagLabsLoginActions.validatePrice();
+    }
+    @Then("I click on add to cart to proceed")
+    public void i_click_on_add_to_cart_to_proceed() {
+        //Write code for adding to cart and redirecting to validate the product is added
+        swagLabsLoginActions.addtoCartFromProdDescPage();
+    }
+
 
 
 
