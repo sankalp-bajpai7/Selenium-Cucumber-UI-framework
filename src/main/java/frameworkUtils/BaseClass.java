@@ -136,6 +136,13 @@ public class BaseClass {
             System.out.println("Error trying to scroll");
         }
 
+        //WebDriver driver = new FirefoxDriver();
+        //        JavascriptExecutor js = (JavascriptExecutor) driver;
+        //Locating element by link text and store in variable "Element"
+       // WebElement Element = driver.findElement(By.linkText("Try Selenium Testing For Free"));
+        // Scrolling down the page till the element is found
+        //        js.executeScript("arguments[0].scrollIntoView();", Element);
+
 
     }
 

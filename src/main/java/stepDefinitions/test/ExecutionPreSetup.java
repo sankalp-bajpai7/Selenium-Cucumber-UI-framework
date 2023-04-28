@@ -64,7 +64,7 @@ public class ExecutionPreSetup implements HelperBaseInterface {
     public  void stopDriver() {
         //Driver = getDriver();
         //Driver.close();
-       // Driver.quit();
+        Driver.quit();
 
     }
 
